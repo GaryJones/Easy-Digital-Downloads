@@ -214,6 +214,17 @@ function edd_has_variable_prices( $download_id ) {
 }
 
 /**
+ * Check if specified download is free.
+ * 
+ * @since 2.0.5
+ * @param int $download_id ID of the download
+ * @return bool True is price is 0, false otherwise
+ */
+function edd_is_free( $download_id ) {
+	return ! ceil( edd_get_download_price( $download_id ) );
+}
+
+/**
  * Retrieves the name of a variable price option
  *
  * @since 1.0.9
